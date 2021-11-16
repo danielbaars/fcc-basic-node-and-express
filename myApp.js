@@ -32,4 +32,12 @@ app.get('/:word/echo', function(req, res, next) {
 }, function(req, res) {
   res.json({ echo: req.params.word });
 });
+
+
+app.get('/name', function(req, res, next) {
+  next();
+}, function(req, res) {
+  res.json({ name: `${req.query.first} ${req.query.last}` });
+});
+
 module.exports = app;
